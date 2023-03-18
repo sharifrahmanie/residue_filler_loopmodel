@@ -28,7 +28,7 @@ def residue_filler_loopmodel(PDB):
     aln = Alignment(e)
     aln.append_model(m, align_codes = PDB)
     aln.write(file = PDB + '.seq')
-    # Preparing the seuence of the PDB file
+    # Preparing the sequence of the PDB file
     header = []
     with open(f'{PDB}.seq') as pdseq, open("PDB.temp", "w") as new:
         next(pdseq)
@@ -39,7 +39,7 @@ def residue_filler_loopmodel(PDB):
                 print(line, file = new)
             else:
                 header.append(line)
-    # Creating an input for multiple sequnce alignment
+    # Creating an input for multiple sequence alignment
     files = ['PDB.temp', 'alignment']
     with open("alignment_input.temp", 'w') as outfile:
         for file in files:
